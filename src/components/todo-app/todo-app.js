@@ -6,34 +6,25 @@ import './todo-app.css'
 
 export default class TodoApp extends Component {
 
-    state = {
-        items: [],
-        text: ''
-    };
+    //  TODO: should use state for current input txt and an array for todos
 
     handleChange = (e) => {
-        this.setState({text: e.target.value});
+        // TODO: save data
     };
 
     handleSubmit = (e) => {
 
-        e.preventDefault();
+        // TODO: prevent default behaviour
 
-        if (this.state.text.length === 0) {
-            return;
-        }
+        // TODO: need to check that txt for new entry is not empty
 
+        // TODO: need to create a new object entry
         const newItem = {
             text: this.state.text,
             id: Date.now()
         };
 
-        this.setState(state => ({
-            items: [...state.items, newItem],
-            // items: state.items.concat(newItem),
-
-            text: ''
-        }));
+        // TODO: need to update data and reset txt value
     }
 
     render() {
@@ -41,7 +32,7 @@ export default class TodoApp extends Component {
             <div className={'todo-app'}>
                 <h1 className={'h3 mb-3 fw-normal'}>TODO</h1>
 
-                <TodoList items={this.state.items}/>
+                {/* should render list */}
 
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-floating">
@@ -51,16 +42,14 @@ export default class TodoApp extends Component {
                             className="form-control todo-list__input"
                             placeholder=" What needs to be done?"
                             id="new-todo"
-                            onChange={this.handleChange}
-                            value={this.state.text}
                         />
                         <label htmlFor="floatingInput"> What needs to be done?</label>
                     </div>
 
 
-                        <button className={'w-100 btn btn-lg btn-primary'}>
-                            Add #{this.state.items.length + 1}
-                        </button>
+                    <button className={'w-100 btn btn-lg btn-primary'}>
+                        Add # 123
+                    </button>
                 </form>
             </div>
         );

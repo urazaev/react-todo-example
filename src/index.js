@@ -3,12 +3,6 @@ import ReactDOM from 'react-dom';
 
 import './index.css';
 
-import App from './components/app/app';
+// TODO: should render app
 
-ReactDOM.render(
-    <App/>,
-    document.getElementById('root')
-);
-
-// import reportWebVitals from './reportWebVitals';
 
